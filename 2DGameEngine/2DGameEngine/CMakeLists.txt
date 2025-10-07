@@ -27,7 +27,7 @@ target_link_libraries(2DGameEngine PRIVATE ${LUA_LIBRARIES})
 find_path(SOL2_INCLUDE_DIRS "sol/abort.hpp")
 target_include_directories(2DGameEngine PRIVATE ${SOL2_INCLUDE_DIRS})
 
-
+target_compile_definitions(2DGameEngine PRIVATE PROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET 2DGameEngine PROPERTY CXX_STANDARD 23)
