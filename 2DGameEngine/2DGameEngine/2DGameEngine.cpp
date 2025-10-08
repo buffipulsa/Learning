@@ -1,5 +1,6 @@
 ﻿
 #include "2DGameEngine.h"
+#include "Logger.h"
 
 
 int main()
@@ -10,6 +11,6 @@ int main()
 	game.run();
 	game.destroy();
 
-	std::println("Hello, 2D Game Engine!");
+	Logger::Log("Hello, 2D Game Engine!");
 	return 0;
 }

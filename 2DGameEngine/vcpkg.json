@@ -1,4 +1,15 @@
 {
-  "dependencies": [ "sdl3","sdl3-image","sdl3-ttf","glm","sol2","lua","imgui" ],
+  "dependencies": [
+    "sdl3",
+    {
+      "name": "sdl3-image",
+      "features": [ "png" ]
+    },
+    "sdl3-ttf",
+    "glm",
+    "sol2",
+    "lua",
+    "imgui"
+  ],
   "builtin-baseline": "a62ce77d56ee07513b4b67de1ec2daeaebfae51a"
 }
