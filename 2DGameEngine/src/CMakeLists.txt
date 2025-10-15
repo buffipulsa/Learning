@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (2DGameEngine "2DGameEngine.cpp" "2DGameEngine.h" "Game.h" "Game.cpp" "Logger.h" "Logger.cpp")
+add_executable ("2DGameEngine" "Main.cpp" "Game/Game.h" "Game/Game.cpp" "Logger/Logger.h" "Logger/Logger.cpp" "Components/TransformComponent.h" "Systems/MovementSystem.h" "ECS/ECS.h" "ECS/ECS.cpp")
 
 find_package(SDL3 CONFIG REQUIRED)
 target_link_libraries(2DGameEngine PRIVATE SDL3::SDL3)
@@ -30,7 +30,7 @@ target_include_directories(2DGameEngine PRIVATE ${SOL2_INCLUDE_DIRS})
 target_compile_definitions(2DGameEngine PRIVATE PROJECT_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET 2DGameEngine PROPERTY CXX_STANDARD 23)
+  set_property(TARGET 2DGameEngine PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Add tests and install targets if needed.

@@ -1,8 +1,6 @@
 #include "Game.h"
-#include "Logger.h"
-
-#include <iostream>
-#include <print>
+#include "../Logger/Logger.h"
+#include "../ECS/ECS.h"
 
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
@@ -108,14 +106,13 @@ void Game::processInput()
 	}
 }
 
-glm::vec2 player_position;
-glm::vec2 player_velocity;
-
 void Game::setup()
 {
 	// Initialize game objects
-	player_position = glm::vec2(10.0, 20.0);
-	player_velocity = glm::vec2(10.0, 5.0);
+	// Entity tank  = Registry.create_entity();
+	// tank.add_component<TransformComponent>();
+	// tank.add_component<BoxColliderComponent>();
+	// tank.add_component<SpriteComponent>("../assets/images/tank.png");
 }
 
 void Game::update()
@@ -131,8 +128,9 @@ void Game::update()
 
 	millisecs_prev_frame = SDL_GetTicks();
 
-	player_position.x += player_velocity.x * delta_time;
-	player_position.y += player_velocity.y * delta_time;
+	// TODO:
+	// MovemntSystem.update();
+	// CollisionSystem.update();
 }	
 
 void Game::render()
@@ -142,24 +140,8 @@ void Game::render()
 
 	SDL_RenderClear(renderer);
 
-	// Draw a PNG texture
-	SDL_Surface* surface = IMG_Load("E:/Learning/2DGameEngine/2DGameEngine/assets/images/tank-tiger-right.png");
-	if (!surface)
-	{
-		Logger::Err("IMG_Load Error");
-		return;
-	}
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	if (!texture)
-	{
-		Logger::Err("SDL_CreateTextureFromSurface Error");
-		return;
-	}
-	SDL_DestroySurface(surface);
-
-	const SDL_FRect dstRect = { player_position.x,player_position.y,32,32 };
-	SDL_RenderTexture(renderer, texture, nullptr, &dstRect);
-	SDL_DestroyTexture(texture);
+	// TODO:
+	// Render game objects...
 
 	SDL_RenderPresent(renderer);
 

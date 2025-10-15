@@ -1,6 +1,6 @@
 ﻿
-#include "2DGameEngine.h"
-#include "Logger.h"
+#include "./Game/Game.h"
+#include "./Logger/Logger.h"
 
 
 int main()

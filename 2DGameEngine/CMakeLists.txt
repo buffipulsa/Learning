@@ -12,4 +12,4 @@ endif()
 project ("2DGameEngine")
 
 # Include sub-projects.
-add_subdirectory ("2DGameEngine")
+add_subdirectory ("src")
