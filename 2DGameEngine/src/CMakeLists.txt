@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable ("2DGameEngine" "Main.cpp" "Game/Game.h" "Game/Game.cpp" "Logger/Logger.h" "Logger/Logger.cpp" "Components/TransformComponent.h" "Systems/MovementSystem.h" "ECS/ECS.h" "ECS/ECS.cpp")
+add_executable (2DGameEngine "Main.cpp" "Game/Game.h" "Game/Game.cpp" "Logger/Logger.h" "Logger/Logger.cpp" "Components/TransformComponent.h" "Systems/MovementSystem.h" "ECS/ECS.h" "ECS/ECS.cpp")
 
 find_package(SDL3 CONFIG REQUIRED)
 target_link_libraries(2DGameEngine PRIVATE SDL3::SDL3)
